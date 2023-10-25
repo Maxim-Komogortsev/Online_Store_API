@@ -3,13 +3,13 @@ services:
     image: postgres
     environment:
       POSTGRES_DB: shopdb
-      POSTGRES_USER: admin
+      POSTGRES_USER: postgres
       POSTGRES_PASSWORD: qwerty
-      ports:
-        - 5432:5432
+    ports:
+      - '1111:5432'
   app:
     build: .
     ports:
-      - 8123:8000
+      - '8000:8000'
     depends_on:
       - db
